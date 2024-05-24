@@ -17,7 +17,7 @@ def import_csv(cursor, nome_tabela, nome_arquivo, commit):
         next(leitor)
         for linha in leitor:
             cursor.execute(f"INSERT INTO {nome_tabela} (titulo,autor,ano,preco) VALUES (?,?,?,?)",(linha[0], linha[1], linha[2], linha[3]))
-        commit
+    commit
 
 execute_sql.create_sql(cursor, nome_tabela, dados_create)
 
